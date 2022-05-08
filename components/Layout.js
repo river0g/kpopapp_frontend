@@ -32,6 +32,31 @@ const Layout = ({
                   Article
                 </a>
               </Link>
+              <Link href="/recently">
+                <a className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded font-bold">
+                  Recently
+                </a>
+              </Link>
+              <Link href="/article/blackpink">
+                <a className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded font-bold">
+                  BLACKPINK
+                </a>
+              </Link>
+              <Link href="/article/aespa">
+                <a className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded font-bold">
+                  aespa
+                </a>
+              </Link>
+              <Link href="/article/ive">
+                <a className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded font-bold">
+                  IVE
+                </a>
+              </Link>
+              <Link href="/article/gi-dle">
+                <a className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded font-bold">
+                  (G)I-DLE
+                </a>
+              </Link>
             </div>
           </div>
         </nav>

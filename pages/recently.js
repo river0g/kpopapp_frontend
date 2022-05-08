@@ -1,46 +1,12 @@
-import { useEffect } from "react";
-import Layout from "../components/Layout";
-import { getAllArticlesData } from "../lib/articles";
-import useSWR from "swr";
-import Article from "../components/Article";
 import { useState } from "react";
+import Layout from "../components/Layout";
+import Article from "../components/Article";
+import { getRecentlyArticleData } from "../lib/articles";
 import { getGroupsName, getTagGroupsName } from "../lib/groups";
 
-export default function ArticlePage({ staticfilteredArticles: articles }) {
-  // const tagGroups = [
-  //   "blackpink",
-  //   "aespa",
-  //   "ive",
-  //   "gi-dle",
-  //   "nmixx",
-  //   "kep1er",
-  //   "All",
-  // ];
-  // const groupName = [
-  //   "BLACKPINK",
-  //   "aespa",
-  //   "IVE",
-  //   "(G)I-DLE",
-  //   "NMIXX",
-  //   "Kep1er",
-  //   "All",
-  // ];
+export default function RecentlyPage({ staticfilteredArticles: articles }) {
   const tagGroups = [...getTagGroupsName(), "All"];
   const groupName = [...getGroupsName(), "All"];
-  // ページ参照時にCSRをする。1
-  // const fetcher = (url) => fetch(url).then((res) => res.json());
-  // const apiUrl = process.env.NEXT_PUBLIC_KPOPAPI_URL;
-  // const { data: articles, mutate } = useSWR(apiUrl, fetcher, {
-  //   fallbackData: staticfilteredArticles,
-  // });
-  // const filteredArticles = articles?.sort(
-  //   (a, b) => new Date(b.datetime) - new Date(a.datetime)
-  // );
-
-  // ページ参照時にCSRをする。2
-  // useEffect(() => {
-  //   mutate();
-  // }, []);
 
   const [tag, setTag] = useState("All");
 
@@ -93,8 +59,8 @@ export default function ArticlePage({ staticfilteredArticles: articles }) {
       </div>
       <div className="grid grid-cols-3 gap-4 content-start">
         {tagfilteredArticles &&
-          tagfilteredArticles.map((article) => (
-            <Article key={article.id} article={article} />
+          tagfilteredArticles.map((article, i) => (
+            <Article key={i} article={article} />
           ))}
       </div>
     </Layout>
@@ -102,7 +68,7 @@ export default function ArticlePage({ staticfilteredArticles: articles }) {
 }
 
 export async function getStaticProps() {
-  const staticfilteredArticles = await getAllArticlesData();
+  const staticfilteredArticles = await getRecentlyArticleData();
   return {
     props: {
       staticfilteredArticles,
