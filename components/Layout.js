@@ -57,6 +57,16 @@ const Layout = ({
                   (G)I-DLE
                 </a>
               </Link>
+              <Link href="/article/kep1er">
+                <a className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded font-bold">
+                  Kep1er
+                </a>
+              </Link>
+              <Link href="/article/nmixx">
+                <a className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded font-bold">
+                  Nmixx
+                </a>
+              </Link>
             </div>
           </div>
         </nav>

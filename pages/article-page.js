@@ -1,7 +1,7 @@
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import Layout from "../components/Layout";
 import { getAllArticlesData } from "../lib/articles";
-import useSWR from "swr";
+// import useSWR from "swr";
 import Article from "../components/Article";
 import { useState } from "react";
 import { getGroupsName, getTagGroupsName } from "../lib/groups";
@@ -91,7 +91,7 @@ export default function ArticlePage({ staticfilteredArticles: articles }) {
           <h3>記事数: {tagfilteredArticles.length}</h3>
         </div>
       </div>
-      <div className="grid grid-cols-3 gap-4 content-start">
+      <div className="grid grid-cols-2 gap-4 content-start">
         {tagfilteredArticles &&
           tagfilteredArticles.map((article) => (
             <Article key={article.id} article={article} />

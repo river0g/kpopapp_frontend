@@ -1,22 +1,32 @@
 export default function Article({ article }) {
   const group = article.group.map((g, i) => <span key={i}>{g} </span>);
   const tagStyle =
-    "inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2";
+    "inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mb-2 mr-2";
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg border-solid border-2 border-pink-500">
-      <a href={article.url}>
-        <img className="w-full" src={article.thumbnail} alt="" />
-        <div className="px-6 py-4">
-          <div className="font-bold text-lg mb-2 h-40 text-gray-700">
-            {article.title}
+    <div className="max-w-xl rounded overflow-hidden shadow-xl border-solid border-2 border-pink-500 bg-neutral-100 hover:bg-neutral-200">
+      <a href={article.url} target="_blank">
+        <div className="h-full grid grid-cols-8 gap-1">
+          <div className="grid grid-cols-8 col-start-1 col-span-9">
+            <div className="col-start-1 col-span-3">
+              <img src={article.thumbnail} alt="" className="w-full" />
+            </div>
+            <div className="col-start-4 col-end-9">
+              <div className="font-bold text-lg m-2 text-gray-700 stroke-pink-400">
+                {article.title}
+              </div>
+            </div>
           </div>
-          <p className="text-green-400 text-base">{article.detail}</p>
-        </div>
-        <div className="px-6 pt-4 pb-2">
-          <span className={tagStyle}>titleの長さ: {article.title.length}</span>
-          <span className={tagStyle}>配信日: {article.date}</span>
-          <span className={tagStyle}>配信サイト: {article.source_site}</span>
-          <span className={tagStyle}>GroupTag: {group}</span>
+          <div className="col-start-1 col-end-9 m-2">
+            <p className="text-gray-500 text-base">{article.detail}</p>
+          </div>
+          <div className="self-end col-start-1 col-end-9 mx-2">
+            {/* <span className={tagStyle}>
+              titleの長さ: {article.title.length}
+            </span> */}
+            <span className={tagStyle}>配信日: {article.date}</span>
+            <span className={tagStyle}>配信サイト: {article.source_site}</span>
+            <span className={tagStyle}>GroupTag: {group}</span>
+          </div>
         </div>
       </a>
     </div>

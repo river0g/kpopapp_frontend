@@ -57,7 +57,8 @@ export default function RecentlyPage({ staticfilteredArticles: articles }) {
           <h3>記事数: {tagfilteredArticles.length}</h3>
         </div>
       </div>
-      <div className="grid grid-cols-3 gap-4 content-start">
+      {/* <div className="grid grid-cols-3 gap-4 content-start"> */}
+      <div className="grid grid-cols-2 gap-4">
         {tagfilteredArticles &&
           tagfilteredArticles.map((article, i) => (
             <Article key={i} article={article} />
