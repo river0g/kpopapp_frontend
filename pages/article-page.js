@@ -107,6 +107,6 @@ export async function getStaticProps() {
     props: {
       staticfilteredArticles,
     },
-    revalidate: 3600 * 6,
+    revalidate: (60 * 60) / 2, // 更新 30min/回
   };
 }

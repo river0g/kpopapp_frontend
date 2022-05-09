@@ -52,6 +52,6 @@ export async function getStaticProps({ params }) {
       title: params.id,
       bgColor: groupColor[params.id],
     },
-    revalidate: 3600 * 6,
+    revalidate: (60 * 60) / 2, // 更新 30min/回
   };
 }
