@@ -4,7 +4,7 @@ export default function Article({ article }) {
     "inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mb-2 mr-2";
   return (
     <div className="max-w-xl rounded overflow-hidden shadow-xl border-solid border-2 border-pink-500 bg-neutral-100 hover:bg-neutral-200">
-      <a href={article.url} target="_blank">
+      <a href={article.url} target="_blank" rel="noreferrer">
         <div className="h-full grid grid-cols-8 gap-1">
           <div className="grid grid-cols-8 col-start-1 col-span-9">
             <div className="col-start-1 col-span-3">
