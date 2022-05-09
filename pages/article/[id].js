@@ -44,6 +44,6 @@ export async function getStaticProps({ params }) {
       articles,
       title: params.id,
     },
-    revalidate: 5,
+    revalidate: 3600 * 6,
   };
 }

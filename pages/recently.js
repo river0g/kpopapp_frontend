@@ -73,6 +73,6 @@ export async function getStaticProps() {
     props: {
       staticfilteredArticles,
     },
-    revalidate: 5,
+    revalidate: 3600 * 6,
   };
 }
