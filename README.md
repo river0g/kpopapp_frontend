@@ -1,5 +1,10 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Todo
+
+- レスポンシブ
+- サイドバーの追加(見た目 + useContext,useReducer で中身の状態管理)
+
 ## Getting Started
 
 First, run the development server:

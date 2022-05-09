@@ -10,6 +10,9 @@ export default function GroupArticle({ articles, title, bgColor }) {
   if (router.isFallback || !articles) return <div>Loading...</div>;
   return (
     <Layout title={`${title} pages`} bgColor={bgColor}>
+      <div className="inline-block m-6 text-2xl font-bold bg-gray-100 rounded-full px-3 py-1">
+        <h3>記事数: {articles.length}</h3>
+      </div>
       <div className="grid grid-cols-2 gap-4 content-start">
         {articles &&
           articles.map((article) => {
