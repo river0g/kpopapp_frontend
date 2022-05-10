@@ -7,16 +7,16 @@ export default function Article({ article }) {
       <a href={article.url} target="_blank" rel="noreferrer">
         <div className="h-full grid grid-cols-8 gap-1">
           <div className="grid grid-cols-8 col-start-1 col-span-9">
-            <div className="col-start-1 col-span-3">
-              <img src={article.thumbnail} alt="" className="w-full" />
+            <div className="flex items-start justify-center col-start-1 col-span-3">
+              <img src={article.thumbnail} alt="" className="max-h-full" />
             </div>
-            <div className="col-start-4 col-end-9">
+            <div className="col-start-4 col-end-9 ">
               <div className="font-bold text-lg m-2 text-gray-700 stroke-pink-400">
                 {article.title}
               </div>
             </div>
           </div>
-          <div className="col-start-1 col-end-9 m-2">
+          <div className="col-start-1 col-end-9 mx-2 mb-2">
             <p className="text-gray-500 text-base">{article.detail}</p>
           </div>
           <div className="self-end col-start-1 col-end-9 mx-2">

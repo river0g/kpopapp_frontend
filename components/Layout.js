@@ -10,7 +10,7 @@ const Layout = ({
   const baseTopStyle = `flex items-center flex-col min-h-screen text-gray-600 text-sm ofnt-mono ${bgColor}`;
   const style1 = isTopPage ? `${baseTopStyle} justify-center` : baseTopStyle;
 
-  const baseMainStyle = "flex flex-1 items-center w-max flex-col mb-10";
+  const baseMainStyle = "flex flex-1 items-center w-full flex-col mb-10";
   const style2 = isTopPage ? `${baseMainStyle} justify-center` : baseMainStyle;
 
   return (
@@ -19,9 +19,9 @@ const Layout = ({
         <title>{title}</title>
       </Head>
       <header className="w-full">
-        <nav className="bg-gray-800 w-full">
-          <div className="flex items-center pl-8 h-14">
-            <div className="flex space-x-4">
+        <nav className="bg-gray-800">
+          <div className="flex items-center justify-between pl-8 h-14">
+            <div className="space-x-4">
               <Link href="/">
                 <a className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded font-bold">
                   Home
@@ -37,6 +37,8 @@ const Layout = ({
                   Recently
                 </a>
               </Link>
+            </div>
+            <div className="space-x-4 mr-4">
               <Link href="/article/blackpink">
                 <a className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded font-bold">
                   BLACKPINK
