@@ -33,3 +33,4 @@ yarn-error.log*
 
 components/ArticleDev.js
 components/LayoutDev.js
+pages/test/

@@ -7,40 +7,8 @@ import { useState } from "react";
 import { getGroupsName, getTagGroupsName } from "../lib/groups";
 
 export default function ArticlePage({ staticfilteredArticles: articles }) {
-  // const tagGroups = [
-  //   "blackpink",
-  //   "aespa",
-  //   "ive",
-  //   "gi-dle",
-  //   "nmixx",
-  //   "kep1er",
-  //   "All",
-  // ];
-  // const groupName = [
-  //   "BLACKPINK",
-  //   "aespa",
-  //   "IVE",
-  //   "(G)I-DLE",
-  //   "NMIXX",
-  //   "Kep1er",
-  //   "All",
-  // ];
   const tagGroups = [...getTagGroupsName(), "All"];
-  const groupName = [...getGroupsName(), "All"];
-  // ページ参照時にCSRをする。1
-  // const fetcher = (url) => fetch(url).then((res) => res.json());
-  // const apiUrl = process.env.NEXT_PUBLIC_KPOPAPI_URL;
-  // const { data: articles, mutate } = useSWR(apiUrl, fetcher, {
-  //   fallbackData: staticfilteredArticles,
-  // });
-  // const filteredArticles = articles?.sort(
-  //   (a, b) => new Date(b.datetime) - new Date(a.datetime)
-  // );
-
-  // ページ参照時にCSRをする。2
-  // useEffect(() => {
-  //   mutate();
-  // }, []);
+  const groupNames = [...getGroupsName(), "All"];
 
   const [tag, setTag] = useState("All");
 
@@ -79,13 +47,13 @@ export default function ArticlePage({ staticfilteredArticles: articles }) {
             `}
             disabled={group === tag}
           >
-            #{group === "All" ? "全てのグループ" : groupName[i]}
+            #{group === "All" ? "全てのグループ" : groupNames[i]}
           </button>
         ))}
       </div>
       <div>
         <div className="inline-block m-6 text-2xl font-bold">
-          <h3>Group: {groupName[tagGroups.indexOf(tag)]}</h3>
+          <h3>Group: {groupNames[tagGroups.indexOf(tag)]}</h3>
         </div>
         <div className="inline-block m-6 text-2xl font-bold">
           <h3>記事数: {tagfilteredArticles.length}</h3>
@@ -102,7 +70,12 @@ export default function ArticlePage({ staticfilteredArticles: articles }) {
 }
 
 export async function getStaticProps() {
-  const staticfilteredArticles = await getAllArticlesData();
+  let staticfilteredArticles = await getAllArticlesData();
+  staticfilteredArticles = staticfilteredArticles.filter((_, idx) => {
+    if (idx >= 30) return false;
+    return true;
+  });
+  console.log(staticfilteredArticles[1]);
   return {
     props: {
       staticfilteredArticles,

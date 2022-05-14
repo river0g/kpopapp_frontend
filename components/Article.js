@@ -1,3 +1,6 @@
+import { useSWR } from "swr";
+import Image from "next/image";
+
 export default function Article({ article }) {
   const group = article.group.map((g, i) => <span key={i}>{g} </span>);
   const tagStyle =

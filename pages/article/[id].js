@@ -33,12 +33,15 @@ export async function getStaticPaths() {
       },
     };
   });
+  // 以下でも良い。
+  // const paths = group_list.map((group) => `/article/${group}`)
   // {paths} とすることで{paths: []}の形になる。
   return {
     paths,
     fallback: false,
   };
 }
+
 const groupColor = {
   blackpink: "bg-gray-900", // blackpink
   aespa: "bg-gradient-to-r from-violet-800 via-rose-400 to-pink-400", // aespa
@@ -47,6 +50,7 @@ const groupColor = {
   nmixx: "bg-gradient-to-r from-blue-400 via-sky-300 to-pink-300", // nmixx
   kep1er: "bg-gradient-to-r from-indigo-300 via-gray-200 to-yellow-200", // kep1er
 };
+
 export async function getStaticProps({ params }) {
   const articles = await getGroupArticle(params.id);
   return {
