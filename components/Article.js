@@ -10,8 +10,23 @@ export default function Article({ article }) {
       <a href={article.url} target="_blank" rel="noreferrer">
         <div className="h-full grid grid-cols-8 gap-1">
           <div className="grid grid-cols-8 col-start-1 col-span-9">
+            {/* <div className="flex items-start justify-center col-start-1 col-span-3">
+              <div className="border border-blue-600 relative w-full h-full">
+                <img
+                  src={article.thumbnail}
+                  className="max-h-full absolute inset-x-0 m-auto"
+                />
+              </div>
+            </div> */}
             <div className="flex items-start justify-center col-start-1 col-span-3">
-              <img src={article.thumbnail} alt="" className="max-h-full" />
+              <div className="relative w-full h-full">
+                <Image
+                  src={article.thumbnail}
+                  className="absolute"
+                  objectFit="contain"
+                  layout="fill"
+                />
+              </div>
             </div>
             <div className="col-start-4 col-end-9 ">
               <div className="font-bold text-lg m-2 text-gray-700 stroke-pink-400">
