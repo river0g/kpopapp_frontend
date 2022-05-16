@@ -9,7 +9,7 @@ export default function Article({ article }) {
     <div className="max-w-xl rounded overflow-hidden shadow-xl border-solid border-2 border-pink-500 bg-neutral-100 hover:bg-neutral-200">
       <a href={article.url} target="_blank" rel="noreferrer">
         <div className="h-full grid grid-cols-8 gap-1">
-          <div className="grid grid-cols-8 col-start-1 col-span-9">
+          <div className="grid grid-cols-8 col-start-1 col-span-9 border-b border-gray-300">
             {/* <div className="flex items-start justify-center col-start-1 col-span-3">
               <div className="border border-blue-600 relative w-full h-full">
                 <img
@@ -18,18 +18,19 @@ export default function Article({ article }) {
                 />
               </div>
             </div> */}
-            <div className="flex items-start justify-center col-start-1 col-span-3">
+            <div className="flex items-start justify-center col-start-1 col-span-3 h-40">
               <div className="relative w-full h-full">
                 <Image
                   src={article.thumbnail}
-                  className="absolute"
+                  // className="absolute"
                   objectFit="contain"
+                  // objectFit="cover"
                   layout="fill"
                 />
               </div>
             </div>
             <div className="col-start-4 col-end-9 ">
-              <div className="font-bold text-lg m-2 text-gray-700 stroke-pink-400">
+              <div className="font-bold text-lg m-2 text-gray-700">
                 {article.title}
               </div>
             </div>

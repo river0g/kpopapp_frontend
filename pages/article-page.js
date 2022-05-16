@@ -75,7 +75,6 @@ export async function getStaticProps() {
     if (idx >= 30) return false;
     return true;
   });
-  console.log(staticfilteredArticles[1]);
   return {
     props: {
       staticfilteredArticles,
