@@ -71,10 +71,10 @@ export default function ArticlePage({ staticfilteredArticles: articles }) {
 
 export async function getStaticProps() {
   let staticfilteredArticles = await getAllArticlesData();
-  staticfilteredArticles = staticfilteredArticles.filter((_, idx) => {
-    if (idx >= 30) return false;
-    return true;
-  });
+  // staticfilteredArticles = staticfilteredArticles.filter((_, idx) => {
+  //   if (idx >= 30) return false;
+  //   return true;
+  // });
   return {
     props: {
       staticfilteredArticles,
