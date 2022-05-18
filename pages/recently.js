@@ -23,13 +23,18 @@ export default function RecentlyPage({ staticfilteredArticles: articles }) {
   const dayTagHandler = (e) => {
     setDayTag(e.currentTarget.value);
   };
-  console.log(dayTag);
-  const tagfilteredArticles =
+
+  let tagfilteredArticles =
     tag === "All"
       ? articles
-      : articles.filter((item) => {
-          return item.group.includes(tag);
-        });
+      : articles.filter((article) => article.group.includes(tag));
+
+  tagfilteredArticles =
+    dayTag === "All"
+      ? tagfilteredArticles
+      : tagfilteredArticles.filter(
+          (item) => dayTag.substring(0, dayTag.length - 3) === item.date
+        );
 
   const tagBaseStyle =
     "inline-block px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2";
