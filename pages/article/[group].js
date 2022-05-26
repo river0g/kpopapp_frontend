@@ -29,7 +29,7 @@ export async function getStaticPaths() {
   const paths = group_list.map((group) => {
     return {
       params: {
-        id: group,
+        group,
       },
     };
   });
@@ -52,12 +52,12 @@ const groupColor = {
 };
 
 export async function getStaticProps({ params }) {
-  const articles = await getGroupArticle(params.id);
+  const articles = await getGroupArticle(params.group);
   return {
     props: {
       articles,
-      title: params.id,
-      bgColor: groupColor[params.id],
+      title: params.group,
+      bgColor: groupColor[params.group],
     },
     revalidate: (60 * 60) / 2, // 更新 30min/回
   };
