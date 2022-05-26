@@ -39,32 +39,32 @@ const Layout = ({
               </Link>
             </div>
             <div className="space-x-4 mr-4">
-              <Link href="/article/group/blackpink">
+              <Link href="/group/blackpink/1">
                 <a className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded font-bold">
                   BLACKPINK
                 </a>
               </Link>
-              <Link href="/article/group/aespa">
+              <Link href="/group/aespa/1">
                 <a className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded font-bold">
                   aespa
                 </a>
               </Link>
-              <Link href="/article/group/ive">
+              <Link href="/group/ive/1">
                 <a className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded font-bold">
                   IVE
                 </a>
               </Link>
-              <Link href="/article/group/gi-dle">
+              <Link href="/group/gi-dle/1">
                 <a className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded font-bold">
                   (G)I-DLE
                 </a>
               </Link>
-              <Link href="/article/group/kep1er">
+              <Link href="/group/kep1er/1">
                 <a className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded font-bold">
                   Kep1er
                 </a>
               </Link>
-              <Link href="/article/group/nmixx">
+              <Link href="/group/nmixx/1">
                 <a className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded font-bold">
                   Nmixx
                 </a>
