@@ -25,6 +25,7 @@ export default function Article({ article }) {
                   objectFit="contain"
                   // objectFit="cover"
                   layout="fill"
+                  alt={article.group}
                 />
               </div>
             </div>
