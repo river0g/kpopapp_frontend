@@ -1,8 +1,8 @@
-import { getGroupArticle } from "../../lib/articles";
-import { getTagGroupsName } from "../../lib/groups";
+import { getGroupArticle } from "../../../lib/articles";
+import { getTagGroupsName } from "../../../lib/groups";
 import { useRouter } from "next/router";
-import Layout from "../../components/Layout";
-import Article from "../../components/Article";
+import Layout from "../../../components/Layout";
+import Article from "../../../components/Article";
 
 export default function GroupArticle({ articles, title, bgColor }) {
   const router = useRouter();
