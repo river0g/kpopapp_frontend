@@ -5,7 +5,7 @@ import Layout from "../../../components/Layout";
 import Article from "../../../components/Article";
 import Link from "next/link";
 
-const pageNums = [1, 2, 3, 4];
+const pageNums = [1, 2, 3, 4, 5];
 
 export default function GroupArticle({
   filteredArticles,
@@ -53,18 +53,15 @@ export default function GroupArticle({
 export async function getStaticPaths() {
   const groupList = getTagGroupsName();
   // const group_list = ["blackpink", "ive", "aespa", "gi-dle", "nmixx", "kep1er"];
-  // const paths = groupList.map((group) => {
-  //   return {
-  //     params: {
-  //       group,
-  //     },
-  //   };
-  // });
-  // 以下でも良い。
+  // xxx:dict, yyy:dict
+  // paths = [{params: xxx , yyy}, {params: ...}, ...]
+  // 上記のように記載する。
+
+  // 以下のような書き方もある。
   // const paths = group_list.map((group) => `/article/${group}`)
   // let paths = groupList.map((group) => `/group/${group}/${id}`)
   const paths = [];
-  let articleNum = [1, 2, 3, 4]; // 30記事/ページとして合計で100記事あるので30,30,30,10の4ページ
+  let articleNum = [1, 2, 3, 4, 5]; // 20記事/ページとして合計で100記事あるので20ページずつの5ページ
   groupList.forEach((group) => {
     articleNum.forEach((num) => {
       paths.push({ params: { group, id: String(num) } });
@@ -91,7 +88,7 @@ export async function getStaticProps({ params }) {
 
   // 1ページ30記事以下にする。
   const filteredArticles = articles.filter((_, idx) => {
-    if ((Number(params.id) - 1) * 30 <= idx && idx < Number(params.id) * 30) {
+    if ((Number(params.id) - 1) * 20 <= idx && idx < Number(params.id) * 20) {
       return true;
     }
   });
